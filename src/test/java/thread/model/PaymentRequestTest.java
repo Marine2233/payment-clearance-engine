@@ -22,14 +22,15 @@ public class PaymentRequestTest {
     public void shouldValidParams(){
         Instant instant = Instant.now();
         LocalDateTime dateTime = LocalDateTime.of(LocalDate.of(2026,2,14), LocalTime.of(10,0));
-        PaymentRequest request = new PaymentRequest(BigInteger.ONE,1,new BigDecimal("1800.00"),PaymentCategory.TRANSFER,instant,dateTime);
+        PaymentRequest request = new PaymentRequest(BigInteger.ONE,1,new BigDecimal("100.00"),PaymentCategory.TRANSFER,instant,dateTime);
 
         assertEquals(BigInteger.ONE,request.getId());
         assertEquals(1,request.clientId());
-        assertEquals(new BigDecimal("1800.00"),request.amount());
+        assertEquals(new BigDecimal("100.00"),request.amount());
         assertEquals(PaymentCategory.TRANSFER,request.category());
         assertEquals(instant,request.createdAtUtc());
         assertEquals(dateTime,request.scheduledLocalTime());
+        assertEquals(new BigDecimal("100.00"), request.amount());
     }
 
     @ParameterizedTest

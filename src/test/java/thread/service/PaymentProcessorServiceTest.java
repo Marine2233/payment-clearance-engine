@@ -1,14 +1,15 @@
-package thread.model;
+package thread.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import thread.model.Client;
+import thread.model.PaymentRequest;
 import thread.model.enums.PaymentCategory;
 import thread.model.enums.Rate;
 import thread.repository.Repository;
-import thread.service.PaymentProcessorService;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -25,7 +26,7 @@ public class PaymentProcessorServiceTest {
     @InjectMocks
     private PaymentProcessorService service;
     @Mock
-    private Repository<Long,Client> repository;
+    private Repository<Long, Client> repository;
 
     private Client makeClient() {
         return new Client(
