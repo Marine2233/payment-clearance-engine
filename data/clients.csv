@@ -1,0 +1,63 @@
+clientId;name;tariff;zoneId;registeredOn
+1;Анна;BASIC;Europe/Berlin;2023-04-10
+2;Иван;PREMIUM;Europe/Moscow;2022-01-01
+3;Елена Смирнова;STANDARD;Europe/Moscow;2023-06-15
+4;Дмитрий;BASIC;Asia/Yekaterinburg;2024-02-29
+5;Ольга Петрова;VIP;Europe/London;2021-11-30
+6;Алексей;PREMIUM;America/New_York;2024-08-20
+7;Мария Иванова-Сидорова;BASIC;Europe/Moscow;2025-01-12
+8;Сергей;STANDARD;Asia/Novosibirsk;2022-09-05
+9;Наталья;PREMIUM;Europe/Paris;2023-12-31
+10;Михаил Козлов;VIP;Asia/Tokyo;2020-05-18
+11;Татьяна;BASIC;Europe/Minsk;2025-07-22
+12;Андрей Волков;STANDARD;Asia/Vladivostok;2026-03-01
+13;Юлия;PREMIUM;America/Los_Angeles;2021-03-14
+14;Владимир;BASIC;Europe/Istanbul;2024-10-10
+15;Екатерина Соколова;VIP;Europe/Moscow;2026-11-01
+16;Артём Новиков;BASIC;Europe/Kaliningrad;2022-04-18
+17;Светлана;STANDARD;Asia/Almaty;2023-01-25
+18;Максим Морозов;PREMIUM;Europe/Warsaw;2021-07-09
+19;Ирина;BASIC;Asia/Tbilisi;2024-05-03
+20;Николай Лебедев;VIP;America/Chicago;2020-12-12
+21;Анастасия;STANDARD;Europe/Moscow;2025-02-28
+22;Павел Егоров;PREMIUM;Asia/Dubai;2023-08-14
+23;Виктория;BASIC;Europe/Prague;2022-11-02
+24;Роман Козловский;STANDARD;Asia/Krasnoyarsk;2024-09-19
+25;Ксения;VIP;Europe/Zurich;2021-06-30
+26;Денис Павлов;BASIC;America/Toronto;2025-04-01
+27;Оксана;PREMIUM;Asia/Yerevan;2023-10-27
+28;Евгений Семёнов;STANDARD;Europe/Samara;2022-02-14
+29;Дарья;BASIC;Asia/Tashkent;2026-01-15
+30;Константин Голубев;VIP;Europe/Madrid;2020-09-01
+31;Марина;PREMIUM;Asia/Seoul;2024-12-05
+32;Александр Виноградов;STANDARD;Europe/Rome;2021-04-22
+33;Полина;BASIC;Asia/Irkutsk;2023-03-08
+34;Игорь Богданов;PREMIUM;America/Sao_Paulo;2025-06-11
+35;Валерия;VIP;Europe/Stockholm;2022-08-30
+36;Тимур Воробьёв;BASIC;Asia/Omsk;2024-01-19
+37;Алина;STANDARD;Europe/Vienna;2023-05-24
+38;Виктор Филиппов;PREMIUM;Asia/Singapore;2021-10-03
+39;София;BASIC;Europe/Moscow;2026-05-09
+40;Станислав Марков;VIP;Australia/Sydney;2020-02-29
+41;Надежда;STANDARD;Europe/Athens;2025-09-17
+42;Григорий Зайцев;PREMIUM;Asia/Baku;2022-06-06
+43;Людмила;BASIC;Europe/Belgrade;2024-07-11
+44;Кирилл Соловьёв;STANDARD;Asia/Kamchatka;2023-11-20
+45;Вероника;VIP;Europe/Amsterdam;2021-01-28
+46;Олег Борисов;BASIC;America/Denver;2025-11-04
+47;Елизавета;PREMIUM;Asia/Shanghai;2022-03-17
+48;Руслан Тарасов;STANDARD;Europe/Riga;2024-04-26
+49;Кристина;BASIC;Asia/Bangkok;2026-08-12
+50;Вадим Белов;VIP;Europe/Moscow;2026-11-12
+51;Артём Захаров;BASIC;Europe/Moscow;2024-03-15
+52;Валентина;PREMIUM;Asia/Yekaterinburg;2023-07-21
+51;Дубликат Артёма;VIP;Europe/London;2025-01-10
+53;Георгий;INVALID_TARIFF;Europe/Berlin;2023-11-05
+54;Диана Соловьёва;STANDARD;Europe/Minsk;2025-08-30
+55;Егор;BASIC;Unknown/Timezone;2024-04-12
+56;Жанна;VIP;America/New_York;2022-02-29
+56;Жанна Валидная;VIP;America/New_York;2022-02-28
+57;Захар Морозов;PREMIUM;Asia/Novosibirsk;2026-06-18
+58;Инна;BASIC;Europe/Paris;2023-09-31
+59;Кирилл;STANDARD;Asia/Vladivostok;2025-12-01
+60;Лариса Попова;PREMIUM;Europe/Moscow;2026-11-12
