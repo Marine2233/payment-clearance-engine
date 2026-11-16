@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import thread.model.Client;
+import thread.model.PaymentDecision;
 import thread.model.PaymentRequest;
 import thread.model.enums.PaymentCategory;
 import thread.model.enums.Rate;
@@ -14,7 +15,7 @@ import thread.repository.Repository;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.time.*;
-import java.util.Optional;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -23,10 +24,20 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class PaymentProcessorServiceTest {
 
+    @Mock
+    private Map<Long, Client> clients;
+
+    @Mock
+    private Repository<BigInteger, PaymentDecision> repository;
+
+    @Mock
+    private CommissionCalculator calculator;
+
+    @Mock
+    private Clock clock;
+
     @InjectMocks
     private PaymentProcessorService service;
-    @Mock
-    private Repository<Long, Client> repository;
 
     private Client makeClient() {
         return new Client(
@@ -56,12 +67,12 @@ public class PaymentProcessorServiceTest {
         LocalDateTime localTime = LocalDateTime.of(LocalDate.of(2026, 12, 12), LocalTime.of(10, 0));
         PaymentRequest request = makePaymentRequest(client.id(),localTime);
 
-        when(repository.findById(client.id())).thenReturn(Optional.of(client));
+        when(clients.get(client.id())).thenReturn(client);
 
         Instant res = service.convertToUtc(request);
 
         assertEquals(Instant.parse("2026-12-12T09:00:00Z"),res);
-        verify(repository,times(1)).findById(client.id());
+        verify(clients,times(1)).get(client.id());
 
     }
 
@@ -71,7 +82,7 @@ public class PaymentProcessorServiceTest {
         LocalDateTime localTime = LocalDateTime.of(LocalDate.of(2026, 12, 12), LocalTime.of(10, 0));
         PaymentRequest request = makePaymentRequest(1,localTime);
 
-        when(repository.findById(request.clientId())).thenReturn(Optional.empty());
+        when(clients.get(request.clientId())).thenReturn(null);
 
         assertThrows(IllegalArgumentException.class,()-> service.convertToUtc(request));
 
@@ -83,7 +94,7 @@ public class PaymentProcessorServiceTest {
         // 29 марта 2026 02:30 в Берлине не существует (перевод часов на летнее время)
         PaymentRequest request = makePaymentRequest(client.id(), LocalDateTime.of(2026, 3, 29, 2, 30));
 
-        when(repository.findById(client.id())).thenReturn(Optional.of(client));
+        when(clients.get(client.id())).thenReturn(client);
 
         assertThrows(IllegalArgumentException.class, () -> service.convertToUtc(request));
     }
@@ -95,7 +106,7 @@ public class PaymentProcessorServiceTest {
         // 25 октября 2026 02:30 в Берлине наступает дважды (перевод часов на зимнее время)
         PaymentRequest request = makePaymentRequest(client.id(), LocalDateTime.of(2026, 10, 25, 2, 30));
 
-        when(repository.findById(client.id())).thenReturn(Optional.of(client));
+        when(clients.get(client.id())).thenReturn(client);
 
         assertThrows(IllegalArgumentException.class, () -> service.convertToUtc(request));
     }
